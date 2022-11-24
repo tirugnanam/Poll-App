@@ -1,0 +1,15 @@
+{{outlet}}
+<button {{action 'home'}} class="button_right">HOME</button>
+<button {{action 'profile'}} class="button_right">PROFILE</button>
+<br><br><br>
+<center>
+    <h1>Welcome <i>{{cookie_username}}</i></h1>
+    <button {{action 'check_poll_response'}} class="button">Display your Poll Response(s)</button>
+
+    <div class="form">
+        <h1>Poll Response page</h1>
+        <div id="request_list">
+            <h2>Click the above button to display all Poll response</h2>
+        </div>
+    </div>
+</center>

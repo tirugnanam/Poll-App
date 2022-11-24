@@ -1,0 +1,12 @@
+{{outlet}}
+<button {{action 'logout'}} class="button_right">LOGOUT</button>
+<button {{action 'home'}} class="button_right">HOME</button>
+<br><br><br>
+<center>
+    <h1>Welcome <i>{{cookie_username}}</i></h1>
+    <div class="form">
+        <h1>Profile Page</h1>
+        <p>{{cookie_user_backend_details}}</p>
+        <table class="profile_table" id="profile_table" border="2"></table>
+    </div>
+</center>

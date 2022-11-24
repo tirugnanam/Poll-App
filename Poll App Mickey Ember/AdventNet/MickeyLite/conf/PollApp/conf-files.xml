@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<!-- $Id: conf-files.xml,v 1.1 2006/07/21 14:04:00 sathyaseelan Exp $ -->
+<conf-files>
+ 	<ConfFile url="custom-views.xml" />
+</conf-files>

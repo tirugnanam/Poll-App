@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<custom-view-configurations>
+    <SelectQuery numofobjects="0" queryid="SelectQuery:queryid:EmployeeAccount" startindex="0">
+        <SelectTable tablealias="EmployeeAccount" tablename="EmployeeAccount">
+            <SelectColumn columnalias="EMPLOYEE_ID" columnindex="0" columnname="EMPLOYEE_ID"/>
+            <SelectColumn columnalias="EMPLOYEE_NAME" columnindex="1" columnname="EMPLOYEE_NAME"/>
+            <SelectColumn USERNAME="USERNAME" columnindex="2" columnname="USERNAME"/>
+            <SelectColumn USERNAME="PASSWORD" columnindex="3" columnname="PASSWORD"/>
+            <SelectColumn USERNAME="DEPARTMENT" columnindex="4" columnname="DEPARTMENT"/>
+
+            <SortColumn ascending_order="true" columnalias="EMPLOYEE_ID" columnname="EMPLOYEE_ID" sortindex="0"/>
+        </SelectTable>
+        <CustomViewConfiguration cvid="CustomViewConfiguration:cvid:EmployeeAccountCV" cvname="EmployeeAccountCV"/>
+    </SelectQuery>
+</custom-view-configurations>

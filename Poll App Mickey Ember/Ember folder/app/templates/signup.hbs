@@ -1,0 +1,14 @@
+{{outlet}}
+<center>
+    <form class="form">
+        <h2>Poll SignUp</h2>
+        User ID {{input name="user_id" id="user_id" placeholder="Enter user ID" required=true}}<br>
+        Name {{input name="name" id="name" placeholder="Enter name" required=true}}<br>
+        Username {{input name="username" id="username" placeholder="Enter username" required=true}}<br>
+        Password {{input name="pswd" id="pswd" placeholder="Enter Password" type="password" required=true}}<br>
+        Re-enter Password {{input name="repswd" id="repswd" placeholder="Re-enter password" type="password" required=true}}<br>
+        User Mail ID {{input name="user_mail_id" id="user_mail_id" placeholder="Enter mail id" type="email" required=true}}<br>
+        Department {{input name="dept" id="dept" placeholder="Enter department"}}<br>
+        <button class="button_form" {{action 'signup'}}>SignUp</button>
+    </form>
+</center>

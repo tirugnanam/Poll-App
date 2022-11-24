@@ -1,0 +1,16 @@
+{{outlet}}
+<button {{action 'home'}} class="button_right">HOME</button>
+<button {{action 'profile'}} class="button_right">PROFILE</button>
+<br><br><br>
+<center>
+    <h1>Welcome <i>{{cookie_username}}</i></h1>
+    <button {{action 'check_poll_result'}} class="button">Display Poll Result(s)</button>
+
+    <div class="form">
+        <h1>Poll Result page</h1>
+        <div id="result_list">
+            <h2>Click the above button to display all Poll result</h2>
+        </div>
+        <button class="button" id="delete_all" {{action 'delete'}} hidden="true">Delete all</button>    <!-- Hidden button -->
+    </div>
+</center>

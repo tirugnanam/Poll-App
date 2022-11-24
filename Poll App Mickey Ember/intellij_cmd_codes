@@ -1,0 +1,11 @@
+~/AdventNetMickeyLite/AdventNet/MickeyLite/bin$ bash app_ctl.sh reinitDB -f
+
+~/AdventNetMickeyLite/AdventNet/MickeyLite/bin$ bash app_ctl.sh run
+ 
+~/AdventNetMickeyLite/AdventNet/MickeyLite/bin$ bash app_ctl.sh shutdown
+ 
+~/AdventNetMickeyLite$ jar cvf WEB-INF/lib/Main.jar WEB-INF/classes/*
+ 
+ sudo systemctl status mysql.server.service
+ 
+ ~/AdventNetMickeyLite/AdventNet/MickeyLite/webapps$ cd ROOT/ && jar -cvf ROOT.war * && mv -v ROOT.war .. && cd ..

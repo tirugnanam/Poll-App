@@ -1,0 +1,306 @@
+<?xml version="1.0" ?>
+<!-- $Id$ -->
+<!DOCTYPE data-dictionary SYSTEM "data-dictionary.dtd">
+<data-dictionary name="PollApp">
+	<table name="EmployeeAccount">
+		<columns>
+			<column name="EMPLOYEE_ID">
+				<data-type>CHAR</data-type>
+				<max-size>10</max-size>
+			</column>
+			<column name="EMPLOYEE_NAME">
+				<data-type>CHAR</data-type>
+				<max-size>50</max-size>
+				<nullable>false</nullable>
+			</column>
+			<column name="USERNAME">
+				<data-type>CHAR</data-type>
+				<max-size>50</max-size>
+			</column>
+			<column name="PASSWORD">
+				<data-type>SCHAR</data-type>
+				<max-size>25</max-size>
+			</column>
+			<column name="DEPARTMENT">
+				<data-type>CHAR</data-type>
+				<max-size>50</max-size>
+			</column>
+		</columns>
+		<primary-key name="EmployeeAccount_PK">
+			<primary-key-column>EMPLOYEE_ID</primary-key-column>
+		</primary-key>
+		<unique-keys>
+			<unique-key name="EmployeeAccount_UK">
+				<unique-key-column>USERNAME</unique-key-column>
+			</unique-key>
+		</unique-keys>
+	</table>
+	<table name="PollDB">
+		<columns>
+			<column name="POLL_ID">
+				<data-type>BIGINT</data-type>
+				<uniquevalue-generation>
+					<generator-name>PollDB.POLL_ID</generator-name>
+				</uniquevalue-generation>
+			</column>
+			<column name="EMPLOYEE_ID">
+				<data-type>CHAR</data-type>
+				<max-size>10</max-size>
+			</column>
+			<column name="EMPLOYEE_NAME">
+				<data-type>CHAR</data-type>
+				<max-size>50</max-size>
+				<nullable>false</nullable>
+			</column>
+			<column name="USERNAME">
+				<data-type>CHAR</data-type>
+				<max-size>50</max-size>
+			</column>
+
+			<column name="POLL_DATETIME">
+				<data-type>CHAR</data-type>
+				<max-size>50</max-size>
+			</column>
+			<column name="POLL_CONTENT">
+				<data-type>CHAR</data-type>
+				<max-size>1000</max-size>
+			</column>
+			<column name="POLL_OPTIONS">
+				<data-type>CHAR</data-type>
+				<max-size>100</max-size>
+			</column>
+			<column name="POLL_ASSIGNED">
+				<data-type>CHAR</data-type>
+				<max-size>1000</max-size>
+			</column>
+			<column name="POLL_FILLED">
+				<data-type>CHAR</data-type>
+				<max-size>1000</max-size>
+			</column>
+			<column name="POLL_UNFILLED">
+				<data-type>CHAR</data-type>
+				<max-size>1000</max-size>
+			</column>
+			<column name="POLL_RESULTS">
+				<data-type>CHAR</data-type>
+				<max-size>1000</max-size>
+			</column>
+		</columns>
+		<primary-key name="PollDB_PK">
+			<primary-key-column>POLL_ID</primary-key-column>
+		</primary-key>
+
+		<foreign-keys>
+			<foreign-key name="PollDB_FK1" reference-table-name="EmployeeAccount">
+				<fk-columns>
+					<fk-column>
+						<fk-local-column>EMPLOYEE_ID</fk-local-column>
+						<fk-reference-column>EMPLOYEE_ID</fk-reference-column>
+					</fk-column>
+				</fk-columns>
+				<fk-constraints>ON-DELETE-RESTRICT</fk-constraints>
+			</foreign-key>
+		</foreign-keys>
+	</table>
+
+
+
+
+<!--	New tables-->
+	<table name="Users">
+		<columns>
+			<column name="USER_ID">
+				<data-type>CHAR</data-type>
+				<max-size>10</max-size>
+			</column>
+			<column name="NAME">
+				<data-type>CHAR</data-type>
+				<max-size>50</max-size>
+				<nullable>false</nullable>
+			</column>
+			<column name="DEPARTMENT">
+				<data-type>CHAR</data-type>
+				<max-size>50</max-size>
+			</column>
+			<column name="USER_MAIL_ID">
+				<data-type>CHAR</data-type>
+				<max-size>50</max-size>
+			</column>
+		</columns>
+		<primary-key name="Users_PK">
+			<primary-key-column>USER_ID</primary-key-column>
+		</primary-key>
+		<unique-keys>
+			<unique-key name="Users_UK">
+				<unique-key-column>USER_MAIL_ID</unique-key-column>
+			</unique-key>
+		</unique-keys>
+	</table>
+
+	<table name="UsersCredentials">
+		<columns>
+			<column name="USER_ID">
+				<data-type>CHAR</data-type>
+				<max-size>10</max-size>
+			</column>
+			<column name="USERNAME">
+				<data-type>CHAR</data-type>
+				<max-size>50</max-size>
+			</column>
+			<column name="PASSWORD">
+				<data-type>SCHAR</data-type>
+				<max-size>25</max-size>
+			</column>
+		</columns>
+		<primary-key name="UsersCredentials_PK">
+			<primary-key-column>USERNAME</primary-key-column>
+		</primary-key>
+		<foreign-keys>
+			<foreign-key name="UsersCredentials_FK1" reference-table-name="Users">
+				<fk-columns>
+					<fk-column>
+						<fk-local-column>USER_ID</fk-local-column>
+						<fk-reference-column>USER_ID</fk-reference-column>
+					</fk-column>
+				</fk-columns>
+			</foreign-key>
+		</foreign-keys>
+		<unique-keys>
+			<unique-key name="UsersCredentials_UK">
+				<unique-key-column>USER_ID</unique-key-column>
+			</unique-key>
+		</unique-keys>
+	</table>
+
+
+	<table name="PollData">
+		<columns>
+			<column name="POLL_ID">
+				<data-type>CHAR</data-type>
+				<max-size>36</max-size>
+			</column>
+			<column name="USER_ID">
+				<data-type>CHAR</data-type>
+				<max-size>10</max-size>
+			</column>
+			<column name="POLL_CONTENT">
+				<data-type>CHAR</data-type>
+				<max-size>10000</max-size>
+				<nullable>false</nullable>
+			</column>
+			<column name="POLL_OPTIONS">
+				<data-type>CHAR</data-type>
+				<max-size>1000</max-size>
+				<nullable>false</nullable>
+			</column>
+			<column name="DATETIME">
+				<data-type>BIGINT</data-type>
+			</column>
+		</columns>
+		<primary-key name="PollData_PK">
+			<primary-key-column>POLL_ID</primary-key-column>
+		</primary-key>
+		<foreign-keys>
+			<foreign-key name="PollData_FK1" reference-table-name="Users">
+				<fk-columns>
+					<fk-column>
+						<fk-local-column>USER_ID</fk-local-column>
+						<fk-reference-column>USER_ID</fk-reference-column>
+					</fk-column>
+				</fk-columns>
+				<fk-constraints>ON-DELETE-CASCADE</fk-constraints>
+			</foreign-key>
+		</foreign-keys>
+	</table>
+
+	<table name="PollResponseData">
+		<columns>
+			<column name="POLL_RESP_DATA_ID">
+				<data-type>BIGINT</data-type>
+				<uniquevalue-generation>
+					<generator-name>PollResponseData.POLL_RESP_DATA_ID</generator-name>
+				</uniquevalue-generation>
+			</column>
+			<column name="POLL_ID">
+				<data-type>CHAR</data-type>
+				<max-size>36</max-size>
+			</column>
+			<column name="USER_ID">
+				<data-type>CHAR</data-type>
+				<max-size>10</max-size>
+			</column>
+			<column name="POLL_RESULT">
+				<data-type>CHAR</data-type>
+				<max-size>1000</max-size>
+			</column>
+			<column name="DATETIME">
+				<data-type>BIGINT</data-type>
+			</column>
+		</columns>
+		<primary-key name="PollResponseData_PK">
+			<primary-key-column>POLL_RESP_DATA_ID</primary-key-column>
+		</primary-key>
+		<foreign-keys>
+			<foreign-key name="PollResponseData_FK1" reference-table-name="Users">
+				<fk-columns>
+					<fk-column>
+						<fk-local-column>USER_ID</fk-local-column>
+						<fk-reference-column>USER_ID</fk-reference-column>
+					</fk-column>
+				</fk-columns>
+				<fk-constraints>ON-DELETE-CASCADE</fk-constraints>
+			</foreign-key>
+			<foreign-key name="PollResponseData_FK2" reference-table-name="PollData">
+				<fk-columns>
+					<fk-column>
+						<fk-local-column>POLL_ID</fk-local-column>
+						<fk-reference-column>POLL_ID</fk-reference-column>
+					</fk-column>
+				</fk-columns>
+				<fk-constraints>ON-DELETE-CASCADE</fk-constraints>
+			</foreign-key>
+		</foreign-keys>
+	</table>
+
+	<table name="PollAssignedUsers">
+		<columns>
+			<column name="POLL_ASSIGN_USER_ID">
+				<data-type>BIGINT</data-type>
+				<uniquevalue-generation>
+					<generator-name>PollAssignedUsers.POLL_ASSIGN_USER_ID</generator-name>
+				</uniquevalue-generation>
+			</column>
+			<column name="POLL_ID">
+				<data-type>CHAR</data-type>
+				<max-size>36</max-size>
+			</column>
+			<column name="ASSIGNED_USER_ID">
+				<data-type>CHAR</data-type>
+				<max-size>10</max-size>
+			</column>
+		</columns>
+		<primary-key name="PollAssignedUsers_PK">
+			<primary-key-column>POLL_ASSIGN_USER_ID</primary-key-column>
+		</primary-key>
+		<foreign-keys>
+			<foreign-key name="PollAssignedUsers_FK1" reference-table-name="Users">
+				<fk-columns>
+					<fk-column>
+						<fk-local-column>ASSIGNED_USER_ID</fk-local-column>
+						<fk-reference-column>USER_ID</fk-reference-column>
+					</fk-column>
+				</fk-columns>
+				<fk-constraints>ON-DELETE-CASCADE</fk-constraints>
+			</foreign-key>
+			<foreign-key name="PollAssignedUsers_FK2" reference-table-name="PollData">
+				<fk-columns>
+					<fk-column>
+						<fk-local-column>POLL_ID</fk-local-column>
+						<fk-reference-column>POLL_ID</fk-reference-column>
+					</fk-column>
+				</fk-columns>
+				<fk-constraints>ON-DELETE-CASCADE</fk-constraints>
+			</foreign-key>
+		</foreign-keys>
+	</table>
+</data-dictionary>

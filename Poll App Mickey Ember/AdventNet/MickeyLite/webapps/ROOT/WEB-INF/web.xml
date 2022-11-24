@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+    <display-name>Example App</display-name>
+    <description>An example application which is used to play with some features of Tomcat</description>
+
+<!--    <welcome-file-list>-->
+<!--        <welcome-file>index.html</welcome-file>-->
+<!--    </welcome-file-list>-->
+
+<!--    <servlet>-->
+<!--        <servlet-name>Main</servlet-name>-->
+<!--        <servlet-class>samplepackage.Main</servlet-class>-->
+<!--    </servlet>-->
+
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>Main</servlet-name>-->
+<!--        <url-pattern>/main</url-pattern>-->
+<!--    </servlet-mapping>-->
+
+    <servlet>
+        <servlet-name>SignUp</servlet-name>
+        <servlet-class>samplepackage.Signup</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SignUp</servlet-name>
+        <url-pattern>/signup</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Login</servlet-name>
+        <servlet-class>samplepackage.Login</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Login</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Profile</servlet-name>
+        <servlet-class>samplepackage.Profile</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Profile</servlet-name>
+        <url-pattern>/profile</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PollCreate</servlet-name>
+        <servlet-class>samplepackage.PollCreate</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PollCreate</servlet-name>
+        <url-pattern>/pollCreate</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PollRequest</servlet-name>
+        <servlet-class>samplepackage.PollRequest</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PollRequest</servlet-name>
+        <url-pattern>/PollRequest</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PollResult</servlet-name>
+        <servlet-class>samplepackage.PollResult</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PollResult</servlet-name>
+        <url-pattern>/PollResult</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PollResponse</servlet-name>
+        <servlet-class>samplepackage.PollResponse</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PollResponse</servlet-name>
+        <url-pattern>/PollResponse</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PollSubmit</servlet-name>
+        <servlet-class>samplepackage.PollSubmit</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PollSubmit</servlet-name>
+        <url-pattern>/PollSubmit</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PollDelete</servlet-name>
+        <servlet-class>samplepackage.PollDelete</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PollDelete</servlet-name>
+        <url-pattern>/PollDelete</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GetAllUsernames</servlet-name>
+        <servlet-class>samplepackage.GetAllUsernames</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetAllUsernames</servlet-name>
+        <url-pattern>/getAllUsernames</url-pattern>
+    </servlet-mapping>
+
+<!--    <servlet>-->
+<!--        <servlet-name>Home</servlet-name>-->
+<!--        <servlet-class>samplepackage.home</servlet-class>-->
+<!--    </servlet>-->
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>Home</servlet-name>-->
+<!--        <url-pattern>/home</url-pattern>-->
+<!--    </servlet-mapping>-->
+
+<!--    <filter>-->
+<!--        <filter-name>home_filter</filter-name>-->
+<!--        <filter-class>samplepackage.Login</filter-class>-->
+<!--    </filter>-->
+<!--    <filter-mapping>-->
+<!--        <filter-name>home_filter</filter-name>-->
+<!--        <url-pattern>/home</url-pattern>-->
+<!--    </filter-mapping>-->
+
+
+    <!--    <servlet>-->
+<!--        <servlet-name>Display</servlet-name>-->
+<!--        <servlet-class>samplepackage.display</servlet-class>-->
+<!--    </servlet>-->
+
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>Display</servlet-name>-->
+<!--        <url-pattern>/display</url-pattern>-->
+<!--    </servlet-mapping>-->
+    <filter>
+        <filter-name>AccessControlAllowFilter</filter-name>
+        <filter-class>samplepackage.AccessControlAllowFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>AccessControlAllowFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+</web-app>

@@ -1,0 +1,11 @@
+{{outlet}}
+<br><br><br>
+<center>
+    <div class="form">
+        <h1>Poll Login</h1>
+        Username {{input name="username" id="username" placeholder="Enter username" required=true}}<br>
+        Password {{input name="pswd" id="pswd" placeholder="Enter password" required=true type="password"}}<br>
+        <button {{action 'login'}} class="button">Login</button>
+    </div>
+    {{!-- <h6 id="myText"></h6> --}}
+</center>

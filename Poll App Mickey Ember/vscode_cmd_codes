@@ -1,0 +1,7 @@
+ember new Ember folder		//If fails, then try Ember_folder
+
+ember g route poll_result
+
+ember g controller poll_result
+
+ember s

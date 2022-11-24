@@ -1,0 +1,49 @@
+{{outlet}}
+<button {{action 'home'}} class="button_right">HOME</button>
+<button {{action 'profile'}} class="button_right">PROFILE</button>
+<br><br><br>
+<center>
+    <h1>Welcome <i>{{cookie_username}}</i></h1>
+    {{get_all_usernames}}
+    <form class="form">
+        <h1>Poll create Page</h1>
+        <table>
+            <tr>
+                <td>Poll content</td> 
+                <td>{{input name="pollcontent" id="pollcontent" placeholder="Enter poll content" required=true}}</td>
+            </tr>
+            <tr>
+                <td>No. of Poll options needed<br>(Min 2, Max 5)</td> 
+                <td>{{input name="opt_count" id="opt_count" type="number" min="2" max="5" value="2"}}</td>
+                <td><button {{action 'set_opt_count'}} >Set</button></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <table id="opt">
+                        <tr>
+                            <td>Enter Option 1 value : </td>
+                            <td><input name="opt1" id="opt1" placeholder="Enter option 1" required=true></td>
+                        </tr>
+                        <tr>
+                            <td>Enter Option 2 value : </td>
+                            <td><input name="opt2" id="opt2" placeholder="Enter option 2" required=true></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td id="max_user_count">No. of users needed<br>(Min 1)</td> 
+                <td>{{input name="user_count" id="user_count" type="number" min="1" value="2"}}</td>
+                <td><button {{action 'set_user_count'}} >Set</button></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <table id="user"></table>
+                </td>
+            </tr>
+        </table>
+        <center><button {{action 'poll_create_submit'}} class="button">Create Poll</button></center>
+    </form>
+</center>

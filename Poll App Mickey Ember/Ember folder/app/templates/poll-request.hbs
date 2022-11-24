@@ -1,0 +1,16 @@
+{{outlet}}
+<button {{action 'home'}} class="button_right">HOME</button>
+<button {{action 'profile'}} class="button_right">PROFILE</button>
+<br><br><br>
+<center>
+    <h1>Welcome <i>{{cookie_username}}</i></h1>
+    <button {{action 'check_poll_request'}} class="button">Display Poll Request(s)</button>
+
+    <div class="form">
+        <h1>Poll Request page</h1>
+        <div id="request_list">
+            <h2>Click the above button to display all Poll requests</h2>
+        </div>
+        <button class="button" id="submit_all" {{action 'submit'}} hidden="true">Submit all</button>    <!-- Hidden button -->
+    </div>
+</center>

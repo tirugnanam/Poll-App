@@ -1,0 +1,134 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f3f8d45e;
+}
+
+input[type=text],
+input[type=number],
+input[type=email],
+input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.button {
+    background-color: #04AA6D;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    /* border: none; */
+    cursor: pointer;
+    width: 400px;
+}
+
+.button_form{
+    background-color: #04AA6D;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    /* border: none; */
+    cursor: pointer;
+    /* width: 100px;
+    height: 10px; */
+}
+
+
+.button_right{
+    float: right;
+    background-color: #392bff;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.container {
+    padding: 16px;
+}
+
+
+
+
+
+/* nav bar */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    text-align: center;
+    background-color: #333;
+}
+
+/* li {
+    float: left;
+    border-left: 1px solid #bbb;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #04AA6D;
+} */
+
+
+
+
+
+.constant {
+    font-size: 22px;
+    color: rgb(12, 224, 101);
+    text-align: center;
+    padding: 16px 0px 16px 0px;
+}
+
+.form{
+    padding: 25px 20px 50px 20px; 
+    width:675px;
+    border: 3px solid #f1f1f1;
+}
+
+
+.profile_table{
+    font-size: larger;
+    height: 100%;
+    width: 100%;
+    border: 1px solid #04AA6D;
+}
+.tout{
+    border: 2px solid;
+}
+
+.innertable{
+    border: 2px solid; 
+    background-color:#32CD32;
+}
+
+input:focus,
+select:focus {
+    background: rgb(248, 248, 173);
+    outline-color: rgb(40, 60, 240);
+}
+
+i{
+    font-size: 150%;
+    color: rgb(47, 224, 12);
+}
